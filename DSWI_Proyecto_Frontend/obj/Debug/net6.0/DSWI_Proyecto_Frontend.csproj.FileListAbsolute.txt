@@ -456,3 +456,10 @@ C:\Users\Andres\Source\Repos\DSWI_Proyecto_Frontend\DSWI_Proyecto_Frontend\bin\D
 C:\Users\Andres\Source\Repos\DSWI_Proyecto_Frontend\DSWI_Proyecto_Frontend\bin\Debug\net6.0\SixLabors.Fonts.dll
 C:\Users\Andres\Source\Repos\DSWI_Proyecto_Frontend\DSWI_Proyecto_Frontend\bin\Debug\net6.0\System.IO.Packaging.dll
 C:\Users\Andres\Source\Repos\DSWI_Proyecto_Frontend\DSWI_Proyecto_Frontend\bin\Debug\net6.0\XLParser.dll
+D:\WS_DSWI_NET_CORE\DSWI_Proyecto_Frontend\DSWI_Proyecto_Frontend\bin\Debug\net6.0\ClosedXML.dll
+D:\WS_DSWI_NET_CORE\DSWI_Proyecto_Frontend\DSWI_Proyecto_Frontend\bin\Debug\net6.0\DocumentFormat.OpenXml.dll
+D:\WS_DSWI_NET_CORE\DSWI_Proyecto_Frontend\DSWI_Proyecto_Frontend\bin\Debug\net6.0\ExcelNumberFormat.dll
+D:\WS_DSWI_NET_CORE\DSWI_Proyecto_Frontend\DSWI_Proyecto_Frontend\bin\Debug\net6.0\Irony.dll
+D:\WS_DSWI_NET_CORE\DSWI_Proyecto_Frontend\DSWI_Proyecto_Frontend\bin\Debug\net6.0\SixLabors.Fonts.dll
+D:\WS_DSWI_NET_CORE\DSWI_Proyecto_Frontend\DSWI_Proyecto_Frontend\bin\Debug\net6.0\System.IO.Packaging.dll
+D:\WS_DSWI_NET_CORE\DSWI_Proyecto_Frontend\DSWI_Proyecto_Frontend\bin\Debug\net6.0\XLParser.dll
