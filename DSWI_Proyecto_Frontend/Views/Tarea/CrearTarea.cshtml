@@ -1,0 +1,50 @@
+﻿@model DSWI_Proyecto_Frontend.Models.Tarea
+
+@{
+    ViewData["Title"] = "CrearTarea";
+}
+<div class="container">
+
+
+    <h1>Crear Nueva Tarea</h1>
+
+    <hr />
+
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card" style="box-shadow: 5px 5px 20px rgba(0,0,0,0.4); padding: 30px">
+                <form asp-action="CrearTarea">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="NombreProyecto" class="control-label">Nombre del Proyecto</label>
+                        <input asp-for="NombreProyecto" class="form-control" />
+                        <span asp-validation-for="NombreProyecto" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="DescripcionTarea" class="control-label">Descripción de la Tarea</label>
+                        <input asp-for="DescripcionTarea" class="form-control" />
+                        <span asp-validation-for="DescripcionTarea" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Crear Tarea" class="btn btn-primary" />
+                    </div>
+                </form>
+
+                <div>
+                    <a asp-action="ListarTareas" class="btn btn-secondary">Regresar</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

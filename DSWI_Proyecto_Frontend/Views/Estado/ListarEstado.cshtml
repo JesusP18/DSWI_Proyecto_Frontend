@@ -1,0 +1,48 @@
+﻿@model IEnumerable<DSWI_Proyecto_Frontend.Models.Estado>
+
+@{
+    ViewData["Title"] = "ListarEstado";
+}
+
+<div class="container">
+    <h1>Lista de Estados</h1>
+
+    <p>
+        <a class="btn btn-success" asp-action="CrearEstado">Crear Nuevo Estado</a>
+    </p>
+    <div class="container card" style="box-shadow: 5px 5px 20px rgba(0,0,0,0.4)">
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        Descripción del Estado
+                    </th>
+                    <th>
+                        Acciones
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.idEstado)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.descripcion)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Editar", "EditarEstado", new { id = item.idEstado }, new { @class = "btn btn-warning" })
+                            @Html.ActionLink("Detalle", "DetalleEstado", new { id = item.idEstado }, new { @class = "btn btn-primary" })
+                            @Html.ActionLink("Eliminar", "EliminarEstado", new { id = item.idEstado }, new { @class = "btn btn-danger" })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

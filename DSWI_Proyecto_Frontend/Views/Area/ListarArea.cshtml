@@ -1,0 +1,45 @@
+﻿@model IEnumerable<DSWI_Proyecto_Frontend.Models.Area>
+
+@{
+    ViewData["Title"] = "ListarArea";
+}
+
+<h1>Listar Area</h1>
+
+<p>
+    <a class="btn btn-success" asp-action="CrearArea">Crear Nueva Área</a>
+</p>
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Descripción de Área
+            </th>
+            <th>
+                Acciones
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdArea)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descripcion)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "EditarArea", new { id = item.IdArea }, new { @class = "btn btn-warning" })
+                    @Html.ActionLink("Detalle", "DetalleArea", new { id = item.IdArea }, new { @class = "btn btn-primary" })
+                    @Html.ActionLink("Eliminar", "EliminarArea", new { id = item.IdArea }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

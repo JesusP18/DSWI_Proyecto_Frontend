@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\DSWI_Proyecto_Frontend.props" />
+</Project>

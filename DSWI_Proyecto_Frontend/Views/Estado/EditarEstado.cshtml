@@ -1,0 +1,41 @@
+﻿@model DSWI_Proyecto_Frontend.Models.Estado
+
+@{
+    ViewData["Title"] = "Editar Estado";
+}
+
+<div class="container">
+    <h1 class="mt-4">Editar Estado</h1>
+    <hr />
+
+    <div class="row">
+        <div class="col-md-6">
+            <form asp-action="EditarEstado">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group">
+                    <label asp-for="IdEstado" class="control-label">ID:</label>
+                    <input asp-for="IdEstado" class="form-control" />
+                    <span asp-validation-for="IdEstado" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Descripcion" class="control-label">Descripción:</label>
+                    <input asp-for="Descripcion" class="form-control" />
+                    <span asp-validation-for="Descripcion" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <a asp-action="ListarEstado" class="btn btn-secondary">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

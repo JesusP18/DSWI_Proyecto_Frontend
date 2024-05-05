@@ -1,0 +1,50 @@
+﻿@model IEnumerable<DSWI_Proyecto_Frontend.Models.Prioridad>
+
+@{
+    ViewData["Title"] = "ListarPrioridad";
+}
+
+<div class="container">
+    <h1>Lista de Prioridades</h1>
+
+    <p>
+        <a class="btn btn-success" asp-action="CrearPrioridad">Crear Nueva Prioridad</a>
+    </p>
+
+    <div class="card shadow mb-4">
+        <div class="container card">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Descripción de Prioridades</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@Html.DisplayFor(modelItem => item.IdPrioridad)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Descripcion)</td>
+                                <td>
+                                    <div class="btn-group" role="group">
+                                        <a class="btn btn-warning" asp-action="EditarPrioridad" asp-route-id="@item.IdPrioridad">Editar</a>
+                                    </div>
+                                    <div class="btn-group" role="group">
+                                        <a class="btn btn-primary" asp-action="DetallePrioridad" asp-route-id="@item.IdPrioridad">Detalle</a>
+                                    </div>
+                                    <div class="btn-group" role="group">
+                                        <a class="btn btn-danger" asp-action="EliminarPrioridad" asp-route-id="@item.IdPrioridad">Eliminar</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

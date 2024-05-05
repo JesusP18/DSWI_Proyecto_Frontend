@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\DSWI_Proyecto_Frontend.props" />
+</Project>

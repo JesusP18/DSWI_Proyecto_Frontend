@@ -1,0 +1,125 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = DSWI_Proyecto_Frontend
+build_property.RootNamespace = DSWI_Proyecto_Frontend
+build_property.ProjectDir = D:\WS_DSWI_NET_CORE\DSWI_Proyecto_Frontend\DSWI_Proyecto_Frontend\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\WS_DSWI_NET_CORE\DSWI_Proyecto_Frontend\DSWI_Proyecto_Frontend
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/WS_DSWI_NET_CORE/DSWI_Proyecto_Frontend/DSWI_Proyecto_Frontend/Views/Area/CrearArea.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJlYVxDcmVhckFyZWEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WS_DSWI_NET_CORE/DSWI_Proyecto_Frontend/DSWI_Proyecto_Frontend/Views/Area/DetalleArea.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJlYVxEZXRhbGxlQXJlYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WS_DSWI_NET_CORE/DSWI_Proyecto_Frontend/DSWI_Proyecto_Frontend/Views/Area/EditarArea.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJlYVxFZGl0YXJBcmVhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WS_DSWI_NET_CORE/DSWI_Proyecto_Frontend/DSWI_Proyecto_Frontend/Views/Area/ListarArea.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJlYVxMaXN0YXJBcmVhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WS_DSWI_NET_CORE/DSWI_Proyecto_Frontend/DSWI_Proyecto_Frontend/Views/Categoria/CrearCategoria.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhXENyZWFyQ2F0ZWdvcmlhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WS_DSWI_NET_CORE/DSWI_Proyecto_Frontend/DSWI_Proyecto_Frontend/Views/Categoria/DetalleCategoria.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhXERldGFsbGVDYXRlZ29yaWEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WS_DSWI_NET_CORE/DSWI_Proyecto_Frontend/DSWI_Proyecto_Frontend/Views/Categoria/EditarCategoria.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhXEVkaXRhckNhdGVnb3JpYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WS_DSWI_NET_CORE/DSWI_Proyecto_Frontend/DSWI_Proyecto_Frontend/Views/Categoria/ListarCategorias.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhXExpc3RhckNhdGVnb3JpYXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WS_DSWI_NET_CORE/DSWI_Proyecto_Frontend/DSWI_Proyecto_Frontend/Views/Estado/CrearEstado.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXN0YWRvXENyZWFyRXN0YWRvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WS_DSWI_NET_CORE/DSWI_Proyecto_Frontend/DSWI_Proyecto_Frontend/Views/Estado/DetalleEstado.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXN0YWRvXERldGFsbGVFc3RhZG8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WS_DSWI_NET_CORE/DSWI_Proyecto_Frontend/DSWI_Proyecto_Frontend/Views/Estado/EditarEstado.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXN0YWRvXEVkaXRhckVzdGFkby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WS_DSWI_NET_CORE/DSWI_Proyecto_Frontend/DSWI_Proyecto_Frontend/Views/Estado/ListarEstado.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXN0YWRvXExpc3RhckVzdGFkby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WS_DSWI_NET_CORE/DSWI_Proyecto_Frontend/DSWI_Proyecto_Frontend/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WS_DSWI_NET_CORE/DSWI_Proyecto_Frontend/DSWI_Proyecto_Frontend/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WS_DSWI_NET_CORE/DSWI_Proyecto_Frontend/DSWI_Proyecto_Frontend/Views/Prioridad/CrearPrioridad.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJpb3JpZGFkXENyZWFyUHJpb3JpZGFkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WS_DSWI_NET_CORE/DSWI_Proyecto_Frontend/DSWI_Proyecto_Frontend/Views/Prioridad/DetallePrioridad.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJpb3JpZGFkXERldGFsbGVQcmlvcmlkYWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WS_DSWI_NET_CORE/DSWI_Proyecto_Frontend/DSWI_Proyecto_Frontend/Views/Prioridad/EditarPrioridad.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJpb3JpZGFkXEVkaXRhclByaW9yaWRhZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WS_DSWI_NET_CORE/DSWI_Proyecto_Frontend/DSWI_Proyecto_Frontend/Views/Prioridad/ListarPrioridad.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJpb3JpZGFkXExpc3RhclByaW9yaWRhZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WS_DSWI_NET_CORE/DSWI_Proyecto_Frontend/DSWI_Proyecto_Frontend/Views/Proyecto/ListarProyectos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJveWVjdG9cTGlzdGFyUHJveWVjdG9zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WS_DSWI_NET_CORE/DSWI_Proyecto_Frontend/DSWI_Proyecto_Frontend/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WS_DSWI_NET_CORE/DSWI_Proyecto_Frontend/DSWI_Proyecto_Frontend/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WS_DSWI_NET_CORE/DSWI_Proyecto_Frontend/DSWI_Proyecto_Frontend/Views/Tarea/CrearTarea.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFyZWFcQ3JlYXJUYXJlYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WS_DSWI_NET_CORE/DSWI_Proyecto_Frontend/DSWI_Proyecto_Frontend/Views/Tarea/EditarTarea.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFyZWFcRWRpdGFyVGFyZWEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WS_DSWI_NET_CORE/DSWI_Proyecto_Frontend/DSWI_Proyecto_Frontend/Views/Tarea/ListarTareas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFyZWFcTGlzdGFyVGFyZWFzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WS_DSWI_NET_CORE/DSWI_Proyecto_Frontend/DSWI_Proyecto_Frontend/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WS_DSWI_NET_CORE/DSWI_Proyecto_Frontend/DSWI_Proyecto_Frontend/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WS_DSWI_NET_CORE/DSWI_Proyecto_Frontend/DSWI_Proyecto_Frontend/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-fcikbz3ouk

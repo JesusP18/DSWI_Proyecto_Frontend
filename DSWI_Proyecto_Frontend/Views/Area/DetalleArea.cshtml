@@ -1,0 +1,31 @@
+﻿@model DSWI_Proyecto_Frontend.Models.Area
+
+@{
+    ViewData["Title"] = "DetalleArea";
+}
+
+<div class="container">
+    <h1 class="mt-4">Detalle de Area</h1>
+    <hr />
+
+    <div class="row">
+        <div class="col-md-8">
+            <dl class="row">
+                <dt class="col-sm-3">ID:</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.IdArea)</dd>
+
+                <dt class="col-sm-3">Descripción:</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Descripcion)</dd>
+            </dl>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-md-8">
+            <a href="@Url.Action("EditarArea", new { id = Model.IdArea })" class="btn btn-primary mr-2">Editar</a>
+            <a href="@Url.Action("ListarArea")" class="btn btn-secondary">Retornar</a>
+        </div>
+    </div>
+</div>
+
+

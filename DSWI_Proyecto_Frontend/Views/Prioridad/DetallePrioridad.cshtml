@@ -1,0 +1,29 @@
+﻿@model DSWI_Proyecto_Frontend.Models.Prioridad
+
+@{
+    ViewData["Title"] = "DetallePrioridad";
+}
+
+<div class="container">
+    <h1 class="mt-4">Detalle de Prioridad</h1>
+    <hr />
+
+    <div class="row">
+        <div class="col-md-8">
+            <dl class="row">
+                <dt class="col-sm-3">ID:</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.IdPrioridad)</dd>
+
+                <dt class="col-sm-3">Descripción:</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Descripcion)</dd>
+            </dl>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-md-8">
+            <a href="@Url.Action("EditarPrioridad", new { id = Model.IdPrioridad })" class="btn btn-primary mr-2">Editar</a>
+            <a href="@Url.Action("ListarPrioridad")" class="btn btn-secondary">Retorno</a>
+        </div>
+    </div>
+</div>

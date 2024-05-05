@@ -1,0 +1,35 @@
+﻿@model DSWI_Proyecto_Frontend.Models.Area
+
+@{
+    ViewData["Title"] = "Crear Area";
+}
+
+<h1>Crear Area</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CrearArea">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Descripcion" class="control-label">Descripción:</label>
+                <input asp-for="Descripcion" class="form-control" />
+                <span asp-validation-for="Descripcion" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Crear</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="ListarArea" class="btn btn-secondary">Retornar</a>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

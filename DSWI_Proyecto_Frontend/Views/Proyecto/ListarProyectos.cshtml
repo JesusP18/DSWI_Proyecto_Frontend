@@ -1,0 +1,162 @@
+﻿@model IEnumerable<DSWI_Proyecto_Frontend.Models.Proyecto>
+
+@{
+    ViewData["Title"] = "ListarProyectos";
+}
+
+<h1>Lista de Proyectos</h1>
+
+<div class="row">
+    <div class="col-md-2">
+        <p>
+            <a class="btn btn-success" asp-action="CrearProyecto">Crear Nuevo Proyecto</a>
+        </p>
+    </div>
+    <div class="col-md-2">
+        <p class="text-left">
+            <a class="btn btn-primary" asp-action="ExportarExcel">Exportar Excel</a>
+        </p>
+    </div>
+</div>
+
+<style>
+    .table-responsive {
+        overflow-x: auto;
+    }
+
+    .table {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 1rem;
+        background-color: transparent;
+    }
+</style>
+<div class="card" style="box-shadow: 5px 5px 20px rgba(0,0,0,0.4); padding: 20px">
+    <table class="table table-responsive table-striped table-hover">
+        <thead>
+            <tr>
+                <th>
+                    ID
+                </th>
+                <th>
+                    Nombre
+                </th>
+                <th>
+                    Descripción
+                </th>
+                <th>
+                    Tareas
+                </th>
+                <th>
+                    Categoría
+                </th>
+                <th>
+                    Estado
+                </th>
+                <th>
+                    Prioridad
+                </th>
+                <th>
+                    Complejidad
+                </th>
+                <th>
+                    F. Incio
+                </th>
+                <th>
+                    F. Fin
+                </th>
+                <th>
+                    Mes
+                </th>
+                <th>
+                    Solicitante
+                </th>
+                <th>
+                    Área
+                </th>
+                <th>
+                    Tipo
+                </th>
+                <th>
+                    Presupuesto
+                </th>
+                <th>
+                    Asignado
+                </th>
+                <th>
+                    Porcentaje
+                </th>
+                <th>
+                    Comentarios
+                </th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IdProyecto)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NombreProyecto)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DescripcionProyecto)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DescripcionTarea)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DescripcionCategoria)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DescripcionEstado)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DescripcionPrioridad)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DescripcionComplejidad)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FechaInicio)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FechaFin)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Mes)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NombreUsuario)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DescripcionArea)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DescripcionTipo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Presupuesto)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Asignado)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Porcentaje)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Comentarios)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "EditarProyecto", new { /* id=item.PrimaryKey */ }, new {@class = "btn btn-warning" })
+                        @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ })*@
+                        @Html.ActionLink("Delete", "Elimm", new { /* id=item.PrimaryKey */ }, new {@class = "btn btn-danger" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
