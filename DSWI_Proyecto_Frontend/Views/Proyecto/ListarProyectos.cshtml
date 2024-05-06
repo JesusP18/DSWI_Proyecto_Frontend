@@ -151,9 +151,9 @@
                         @Html.DisplayFor(modelItem => item.Comentarios)
                     </td>
                     <td>
-                        @Html.ActionLink("Edit", "EditarProyecto", new { /* id=item.PrimaryKey */ }, new {@class = "btn btn-warning" })
+                        @Html.ActionLink("Editar", "EditarProyecto", new {  id=item.IdProyecto  }, new {@class = "btn btn-warning" })
                         @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ })*@
-                        @Html.ActionLink("Delete", "Elimm", new { /* id=item.PrimaryKey */ }, new {@class = "btn btn-danger" })
+                        @Html.ActionLink("Eliminar", "EliminarProyecto", new {  id=item.IdProyecto  }, new {@class = "btn btn-danger" })
                     </td>
                 </tr>
             }

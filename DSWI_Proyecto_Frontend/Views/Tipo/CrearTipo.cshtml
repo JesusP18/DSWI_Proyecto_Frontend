@@ -1,0 +1,40 @@
+﻿@model DSWI_Proyecto_Frontend.Models.Tipo
+
+@{
+    ViewData["Title"] = "CrearTipo";
+}
+
+<div class="container">
+    <h1>Crear Nuevo Tipo</h1>
+
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card" style="box-shadow: 5px 5px 20px rgba(0,0,0,0.4); padding: 30px">
+            <form asp-action="CrearTipo">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Descripcion" class="control-label">Descripción</label>
+                    <input asp-for="Descripcion" class="form-control" />
+                    <span asp-validation-for="Descripcion" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+
+        <div>
+            <a asp-action="ListarTipo" class="btn btn-secondary">Regresar</a>
+        </div>
+
+        </div>
+
+        </div>
+    </div>
+
+    
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

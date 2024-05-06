@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using ClosedXML.Excel;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Text;
 
 namespace DSWI_Proyecto_Frontend.Controllers
 {
@@ -14,7 +16,7 @@ namespace DSWI_Proyecto_Frontend.Controllers
 
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("https://localhost:7281/api/Proyecto");
+                client.BaseAddress = new Uri("https://localhost:7281/api/Proyecto/");
 
                 HttpResponseMessage response = await client.GetAsync("");
 
@@ -32,6 +34,264 @@ namespace DSWI_Proyecto_Frontend.Controllers
             }
         }
 
+        // REGISTRAR
+        [HttpGet]
+        public async Task<IActionResult> CrearProyecto()
+        {
+            ViewBag.listaTareas = new SelectList(await ListarTareas(), "IdTarea", "NombreProyecto");
+            ViewBag.listaPrioridades = new SelectList(await ListarPrioridad(), "IdPrioridad", "Descripcion");
+            ViewBag.listaEstados = new SelectList(await ListarEstado(), "IdEstado", "Descripcion");
+            ViewBag.listaComplejidades = new SelectList(await ListarComplejidad(), "IdComplejidad", "Descripcion");
+            ViewBag.listaCategorias = new SelectList(await ListarCategorias(), "IdCategoria", "Descripcion");
+            ViewBag.listaTipos = new SelectList(await ListarTipo(), "IdTipo", "Descripcion");
+            ViewBag.listaAreas = new SelectList(await ListarArea(), "IdArea", "Descripcion");
+            return View(await Task.Run(() => new ProyectoOriginal()));
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CrearProyecto(ProyectoOriginal reg)
+        {
+            string mensaje = "";
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("https://localhost:7281/api/Proyecto/");
+                StringContent content = new StringContent(JsonConvert.SerializeObject(reg), Encoding.UTF8, "application/json");
+
+                HttpResponseMessage response = await client.PostAsync("", content);
+                string apiResponse = await response.Content.ReadAsStringAsync();
+                mensaje = apiResponse;
+            }
+
+            ViewBag.mensaje = mensaje;
+            return RedirectToAction("ListarProyectos");
+
+        }
+
+        //ACTUALIZAR
+        [HttpGet]
+        public async Task<IActionResult> EditarProyecto(string id)
+        {
+            ProyectoOriginal reg = new ProyectoOriginal();
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("https://localhost:7281/api/Proyecto/");
+                HttpResponseMessage response = await client.GetAsync(id);
+                string apiResponse = await response.Content.ReadAsStringAsync();
+                reg =  JsonConvert.DeserializeObject<ProyectoOriginal>(apiResponse);
+            }
+
+            ViewBag.listaTareas = new SelectList(await ListarTareas(), "IdTarea", "NombreProyecto", reg.IdTarea);
+            ViewBag.listaPrioridades = new SelectList(await ListarPrioridad(), "IdPrioridad", "Descripcion", reg.IdPrioridad);
+            ViewBag.listaEstados = new SelectList(await ListarEstado(), "IdEstado", "Descripcion", reg.IdEstado);
+            ViewBag.listaComplejidades = new SelectList(await ListarComplejidad(), "IdComplejidad", "Descripcion", reg.IdComplejidad);
+            ViewBag.listaCategorias = new SelectList(await ListarCategorias(), "IdCategoria", "Descripcion", reg.IdCategoria);
+            ViewBag.listaTipos = new SelectList(await ListarTipo(), "IdTipo", "Descripcion", reg.IdTipo);
+            ViewBag.listaAreas = new SelectList(await ListarArea(), "IdArea", "Descripcion", reg.IdArea);
+            return View(await Task.Run(() => reg));
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditarProyecto(ProyectoOriginal reg)
+        {
+            string mensaje = "";
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("https://localhost:7281/api/Proyecto/");
+                StringContent content = new StringContent(JsonConvert.SerializeObject(reg), Encoding.UTF8, "application/json");
+
+                HttpResponseMessage response = await client.PutAsync("", content);
+                string apiResponse = await response.Content.ReadAsStringAsync();
+                mensaje = apiResponse;
+            }
+
+            ViewBag.mensaje = mensaje;
+            return RedirectToAction("ListarProyectos");
+        }
+
+        //ELIMINAR
+        public async Task<IActionResult> EliminarProyecto(string id)
+        {
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("https://localhost:7281/api/Proyecto/");
+
+                HttpResponseMessage response = await client.DeleteAsync($"https://localhost:7281/api/Proyecto/{id}");
+            }
+            return RedirectToAction("ListarProyectos");
+        }
+
+
+        //COMBOS
+        public async Task<List<Tipo>> ListarTipo()
+        {
+            List<Tipo> lista;
+
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("https://localhost:7281/api/Tipo/");
+
+                HttpResponseMessage response = await client.GetAsync("");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+
+                    lista = JsonConvert.DeserializeObject<List<Tipo>>(apiResponse);
+                }
+                else
+                {
+                    lista = new List<Tipo>();
+                }
+            }
+            return lista;
+        }
+
+        public async Task<List<Tarea>> ListarTareas()
+        {
+            List<Tarea> lista;
+
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("https://localhost:7281/api/Tarea/");
+
+                HttpResponseMessage response = await client.GetAsync("");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    lista = JsonConvert.DeserializeObject<List<Tarea>>(apiResponse);
+                }
+                else
+                {
+                    lista = new List<Tarea>();
+                }
+
+                return lista;
+            }
+        }
+
+
+        public async Task<List<Prioridad>> ListarPrioridad()
+        {
+            List<Prioridad> lista;
+
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("https://localhost:7281/api/Prioridad/");
+
+                HttpResponseMessage response = await client.GetAsync("");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+
+                    lista = JsonConvert.DeserializeObject<List<Prioridad>>(apiResponse);
+                }
+                else
+                {
+                    lista = new List<Prioridad>();
+                }
+            }
+            return lista;
+        }
+
+        public async Task<List<Complejidad>> ListarComplejidad()
+        {
+            List<Complejidad> lista;
+
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("https://localhost:7281/api/Complejidad/");
+
+                HttpResponseMessage response = await client.GetAsync("");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+
+                    lista = JsonConvert.DeserializeObject<List<Complejidad>>(apiResponse);
+                }
+                else
+                {
+                    lista = new List<Complejidad>();
+                }
+            }
+            return lista;
+        }
+
+        public async Task<List<Categoria>> ListarCategorias()
+        {
+            List<Categoria> lista;
+
+            using (var client = new HttpClient())
+            {
+
+                client.BaseAddress = new Uri("https://localhost:7281/api/Categoria/");
+                HttpResponseMessage response = await client.GetAsync("");
+                if (response.IsSuccessStatusCode)
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    lista = JsonConvert.DeserializeObject<List<Categoria>>(apiResponse);
+
+                }
+                else
+                {
+                    lista = new List<Categoria>();
+                }
+
+            }
+            return lista;
+        }
+
+        public async Task<List<Area>> ListarArea()
+        {
+            List<Area> lista;
+
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("https://localhost:7281/api/Area/");
+
+                HttpResponseMessage response = await client.GetAsync("");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+
+                    lista = JsonConvert.DeserializeObject<List<Area>>(apiResponse);
+                }
+                else
+                {
+                    lista = new List<Area>();
+                }
+            }
+            return lista;
+        }
+
+        public async Task<List<Estado>> ListarEstado()
+        {
+            List<Estado> lista;
+
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("https://localhost:7281/api/Estado/");
+
+                HttpResponseMessage response = await client.GetAsync("");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+
+                    lista = JsonConvert.DeserializeObject<List<Estado>>(apiResponse);
+                }
+                else
+                {
+                    lista = new List<Estado>();
+                }
+            }
+            return lista;
+        }
+
+        //FIN COMBOS
 
         //EXPORTAR A EXCEL
         [HttpGet]
