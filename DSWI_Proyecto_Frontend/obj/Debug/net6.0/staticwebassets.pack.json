@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\DSWI_Proyecto_Frontend.bundle.scp.css"
     },
     {
+      "Id": "D:\\WS_DSWI_NET_CORE\\DSWI_Proyecto_Frontend\\DSWI_Proyecto_Frontend\\wwwroot\\css\\Login.css",
+      "PackagePath": "staticwebassets\\css\\Login.css"
+    },
+    {
       "Id": "D:\\WS_DSWI_NET_CORE\\DSWI_Proyecto_Frontend\\DSWI_Proyecto_Frontend\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

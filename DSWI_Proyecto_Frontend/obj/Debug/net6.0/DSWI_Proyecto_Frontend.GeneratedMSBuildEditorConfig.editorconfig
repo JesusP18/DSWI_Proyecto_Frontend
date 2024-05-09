@@ -16,6 +16,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\WS_DSWI_NET_CORE\DSWI_Proyecto_Frontend\DSWI_Proyecto_Frontend
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/WS_DSWI_NET_CORE/DSWI_Proyecto_Frontend/DSWI_Proyecto_Frontend/Views/Acceso/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjZXNvXExvZ2luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WS_DSWI_NET_CORE/DSWI_Proyecto_Frontend/DSWI_Proyecto_Frontend/Views/Acceso/Registrar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjZXNvXFJlZ2lzdHJhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/WS_DSWI_NET_CORE/DSWI_Proyecto_Frontend/DSWI_Proyecto_Frontend/Views/Area/CrearArea.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJlYVxDcmVhckFyZWEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

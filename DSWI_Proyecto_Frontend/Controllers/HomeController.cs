@@ -1,5 +1,6 @@
 ﻿using DSWI_Proyecto_Frontend.Models;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System.Diagnostics;
 
 namespace DSWI_Proyecto_Frontend.Controllers
@@ -27,6 +28,12 @@ namespace DSWI_Proyecto_Frontend.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        public IActionResult CerrarSesion()
+        {
+            
+            return RedirectToAction("Login", "Acceso");
         }
     }
 }

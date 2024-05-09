@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using ClosedXML.Excel;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Text;
+using DocumentFormat.OpenXml.Drawing;
 
 namespace DSWI_Proyecto_Frontend.Controllers
 {
@@ -38,6 +39,7 @@ namespace DSWI_Proyecto_Frontend.Controllers
         [HttpGet]
         public async Task<IActionResult> CrearProyecto()
         {
+            ViewBag.listaUsuarios = new SelectList(await ListarUsuario(), "IdUsuario", "Nombre");
             ViewBag.listaTareas = new SelectList(await ListarTareas(), "IdTarea", "NombreProyecto");
             ViewBag.listaPrioridades = new SelectList(await ListarPrioridad(), "IdPrioridad", "Descripcion");
             ViewBag.listaEstados = new SelectList(await ListarEstado(), "IdEstado", "Descripcion");
@@ -80,6 +82,7 @@ namespace DSWI_Proyecto_Frontend.Controllers
                 reg =  JsonConvert.DeserializeObject<ProyectoOriginal>(apiResponse);
             }
 
+            ViewBag.listaUsuarios = new SelectList(await ListarUsuario(), "IdUsuario", "Nombre", reg.IdUsuario);
             ViewBag.listaTareas = new SelectList(await ListarTareas(), "IdTarea", "NombreProyecto", reg.IdTarea);
             ViewBag.listaPrioridades = new SelectList(await ListarPrioridad(), "IdPrioridad", "Descripcion", reg.IdPrioridad);
             ViewBag.listaEstados = new SelectList(await ListarEstado(), "IdEstado", "Descripcion", reg.IdEstado);
@@ -122,6 +125,31 @@ namespace DSWI_Proyecto_Frontend.Controllers
 
 
         //COMBOS
+        public async Task<List<Usuario>> ListarUsuario()
+        {
+            List<Usuario> lista;
+
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("https://localhost:7281/api/Usuario/");
+
+                HttpResponseMessage response = await client.GetAsync("");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+
+                    lista = JsonConvert.DeserializeObject<List<Usuario>>(apiResponse);
+                }
+                else
+                {
+                    lista = new List<Usuario>();
+                }
+            }
+            return lista;
+        }
+
+
         public async Task<List<Tipo>> ListarTipo()
         {
             List<Tipo> lista;
@@ -391,5 +419,165 @@ namespace DSWI_Proyecto_Frontend.Controllers
                 }
             }
         }
+
+
+        public async Task<IActionResult> resumenEstado()
+        {
+            List<Proyecto> lista = await ListaProyecto();
+
+            List<Estado> resu = new List<Estado>();
+            int contNI = 0;
+            int contEP = 0;
+            int contC = 0;
+            int contA = 0;
+            int contD = 0;
+            int contF = 0;
+
+            foreach (var item in lista)
+            {
+                switch (item.DescripcionEstado)
+                {
+                    case "No Iniciado":
+                        contNI++;
+                        break;
+                    case "En Progreso":
+                        contEP++;
+                        break;
+                    case "Completado":
+                        contC++;
+                        break;
+                    case "Atrasado":
+                        contA++;
+                        break;
+                    case "Desestimado":
+                        contD++;
+                        break;
+                    default:
+                        contF++;
+                        break;
+                }
+            }
+
+            Estado e1 = new Estado(contNI, "No Iniciado");
+            resu.Add(e1);
+
+            Estado e2 = new Estado(contEP, "En Progreso");
+            resu.Add(e2);
+
+            Estado e3 = new Estado(contC, "Completado");
+            resu.Add(e3);
+
+            Estado e4 = new Estado(contA, "Atrasado");
+            resu.Add(e4);
+
+            Estado e5 = new Estado(contD, "Desestimado");
+            resu.Add(e5);
+
+            Estado e6 = new Estado(contF, "Finalizado");
+            resu.Add(e6);
+
+            return StatusCode(StatusCodes.Status200OK, resu);
+
+        }
+
+        public async Task<List<Proyecto>> ListaProyecto()
+        {
+            List<Proyecto> lista;
+
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("https://localhost:7281/api/Proyecto/");
+
+                HttpResponseMessage response = await client.GetAsync("");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+
+                    lista = JsonConvert.DeserializeObject<List<Proyecto>>(apiResponse);
+                }
+                else
+                {
+                    lista = new List<Proyecto>();
+                }
+            }
+            return lista;
+        }
+
+        public async Task<IActionResult> resumenMes()
+        {
+            List<Proyecto> lista = await ListaProyecto();
+
+            List<Estado> resu = new List<Estado>();
+
+            Estado enero = new Estado(0, "Enero");
+            Estado febrero = new Estado(0, "Febrero");
+            Estado marzo = new Estado(0, "Marzo");
+            Estado abril = new Estado(0, "Abril");
+            Estado mayo = new Estado(0, "Mayo");
+            Estado junio = new Estado(0, "Junio");
+            Estado julio = new Estado(0, "Julio");
+            Estado agosto = new Estado(0, "Agosto");
+            Estado setiembre = new Estado(0, "Septiembre");
+            Estado octubre = new Estado(0, "Octubre");
+            Estado noviembre = new Estado(0, "Noviembre");
+            Estado diciembre = new Estado(0, "Diciembre");
+
+            foreach (var item in lista)
+            {
+                switch (item.Mes)
+                {
+                    case "Enero":
+                        enero.idEstado++;
+                        break;
+                    case "Febrero":
+                        febrero.idEstado++;
+                        break;
+                    case "Marzo":
+                        marzo.idEstado++;
+                        break;
+                    case "Abril":
+                        abril.idEstado++;
+                        break;
+                    case "Mayo":
+                        mayo.idEstado++;
+                        break;
+                    case "Junio":
+                        junio.idEstado++;
+                        break;
+                    case "Julio":
+                        julio.idEstado++;
+                        break;
+                    case "Agosto":
+                        agosto.idEstado++;
+                        break;
+                    case "Septiembre":
+                        setiembre.idEstado++;
+                        break;
+                    case "Octubre":
+                        octubre.idEstado++;
+                        break;
+                    case "Noviembre":
+                        noviembre.idEstado++;
+                        break;
+                    default:
+                        diciembre.IdEstado++;
+                        break;
+                }
+            }
+
+            resu.Add(enero);
+            resu.Add(febrero);
+            resu.Add(marzo); resu.Add(abril); resu.Add(mayo);
+            resu.Add(junio); resu.Add(julio); resu.Add(agosto);
+            resu.Add(setiembre); resu.Add(octubre);
+            resu.Add(noviembre); resu.Add(diciembre);
+
+
+            return StatusCode(StatusCodes.Status200OK, resu);
+
+        }
     }
+
 }
+

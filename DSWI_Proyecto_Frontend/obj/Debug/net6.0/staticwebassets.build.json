@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "CC0zZJ9Hgxeb68lEG1NgB6B9Yir1l5wDHsWwLzH9aEM=",
+  "Hash": "3w8tvLB9TlYfq8RcEVmnrnLuWyP7mVquvyXdqj5Jz1w=",
   "Source": "DSWI_Proyecto_Frontend",
   "BasePath": "_content/DSWI_Proyecto_Frontend",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\WS_DSWI_NET_CORE\\DSWI_Proyecto_Frontend\\DSWI_Proyecto_Frontend\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\DSWI_Proyecto_Frontend.bundle.scp.css"
+    },
+    {
+      "Identity": "D:\\WS_DSWI_NET_CORE\\DSWI_Proyecto_Frontend\\DSWI_Proyecto_Frontend\\wwwroot\\css\\Login.css",
+      "SourceId": "DSWI_Proyecto_Frontend",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\WS_DSWI_NET_CORE\\DSWI_Proyecto_Frontend\\DSWI_Proyecto_Frontend\\wwwroot\\",
+      "BasePath": "_content/DSWI_Proyecto_Frontend",
+      "RelativePath": "css/Login.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Login.css"
     },
     {
       "Identity": "D:\\WS_DSWI_NET_CORE\\DSWI_Proyecto_Frontend\\DSWI_Proyecto_Frontend\\wwwroot\\css\\site.css",
